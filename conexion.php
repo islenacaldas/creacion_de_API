@@ -17,6 +17,6 @@ if (!$con) {
     die("Error de conexion: " . mysqli_connect_error());
 } else {
     // Si no hubo errores, muestra que la conexion fue exitosa.
-    echo "Conexion exitosa";
+   // echo "Conexion exitosa";
 }
 ?>

@@ -13,7 +13,7 @@ if(!$respuesta){
     //mysqli_fetch_assoc devuelve una fila de datos de un conjunto de datos y lo devuelve como un array asociativo
     while ($r=mysqli_fetch_assoc($respuesta)){
     //aqui me muestra en pantalla la variable nombre de mi base de datos   
-    echo $r["nombre"];
+    echo $r["nombre"]. "<br>";
     }
 }
 //aqui se cierra la conexion
