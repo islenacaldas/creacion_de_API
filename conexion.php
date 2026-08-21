@@ -10,7 +10,7 @@ $nombrebd = "tienda_ropa_clasica";   // Nombre de la base de datos.
 // Se crea la conexion a MySQL usando los datos anteriores.
 // La variable $con guardara el resultado de la conexion.
 $con = mysqli_connect($servidor, $usuario, $password, $nombrebd);
-
+$resulJson=array();
 // Se verifica si la conexion fallo.
 if (!$con) {
     // Detiene la ejecucion y muestra el motivo del error.
@@ -19,4 +19,4 @@ if (!$con) {
     // Si no hubo errores, muestra que la conexion fue exitosa.
    // echo "Conexion exitosa";
 }
-?>
+?> 
