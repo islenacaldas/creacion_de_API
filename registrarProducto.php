@@ -1,0 +1,37 @@
+<?php
+//se copia el codigo de consultarproducto.php
+header ("Content-Type: application/json");
+require "conexion.php";
+//se declaran variables para recibir los datos que se necesitan del registro por post
+$ide=$_POST["ide"];
+$nom=$_POST["nom"];
+$descr=$_POST["descr"];
+$precio=$_POST["precio"];
+$stock=$_POST["stock"]
+// estas misma variables pero de forma segura: 
+$ides= mysqli_real_escape_string($con,$ide);
+$noms=mysqli_real_escape_string($con,$nom)
+$descrs=mysqli_real_escape_string($con,$descr);
+$precios=mysqli_real_escape_string($con,$precio);
+$stocks=mysqli_real_escape_string($con,$stock);
+//el profesor hizo esto para una contraseña, esto no se tiene en cuenta
+//se va a encriptar usando la siguiente funcion: 
+//crear una variable contraencriptada y usar pasword hash para encriptar
+//$contra_encriptada=password_hash($contra, PASSWORD_BCRYPT);//se le pasa la variabe donde esta la contraseña y el metodo de encriptacion
+//$contras = mysqli_real_escape_string($con, $contra_encriptada)//esto evita que coloquen caracteres extraños
+
+
+
+$sql="SELECT * FROM Producto";
+$respuesta= mysqli_query($con, $sql);
+$resulJson=array();
+if(!$respuesta){
+    die("Error de consulta y/o conexion");
+}else{
+    while ($r=mysqli_fetch_assoc($respuesta)){
+    array_push($resulJson, $r);
+    }
+}
+echo json_encode($resulJson); 
+mysqli_close($con);
+?>

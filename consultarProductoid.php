@@ -25,4 +25,5 @@ if(!$respuesta){
 echo json_encode($r); 
 
 mysqli_close($con);
+//para revisar esta sentencia se coloca en la barra del navegador un? y luego se le da el valory alli sale 
 ?>
