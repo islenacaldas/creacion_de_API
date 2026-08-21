@@ -1,0 +1,112 @@
+/* Reinicia márgenes y facilita el cálculo de tamaños */
+* {
+  box-sizing: border-box;
+}
+
+/* Fondo general de la página */
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Arial, Helvetica, sans-serif;
+  background: linear-gradient(135deg, #0b131b, #a92a91);
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 15px;
+}
+
+/* Contenedor principal del formulario */
+.contenedor {
+  width: 100%;
+  max-width: 560px;
+  background-color: #ffffff;
+  color: #17212b;
+  border-radius: 18px;
+  padding: 35px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+}
+
+/* Título de la tienda */
+h1 {
+  margin: 0;
+  color: #dce5ed;
+  text-align: center;
+  font-size: 30px;
+}
+
+/* Texto inferior del título */
+.subtitulo {
+  color: #5e6a73;
+  text-align: center;
+  margin: 10px 0 30px;
+}
+
+/* Separación entre los campos */
+.campo {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 18px;
+}
+
+/* Nombre de cada campo */
+label {
+  color: #d6349b;
+  font-weight: bold;
+  margin-bottom: 7px;
+}
+
+/* Estilo de las entradas de datos */
+input,
+textarea {
+  width: 100%;
+  border: 1px solid #c8d2da;
+  border-radius: 9px;
+  padding: 12px;
+  font-size: 16px;
+  color: #17212b;
+  outline: none;
+  transition: 0.25s;
+}
+
+/* Tamaño de la descripción */
+textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+/* Efecto al seleccionar un campo */
+input:focus,
+textarea:focus {
+  border-color: #14b8a6;
+  box-shadow: 0 0 0 3px rgba(#ffff);
+}
+
+/* Botón para registrar el producto */
+button {
+  width: 100%;
+  border: none;
+  border-radius: 9px;
+  background-color: #102121;
+  color: #ffffff;
+  padding: 14px;
+  font-size: 17px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+/* Efecto al pasar el mouse por el botón */
+button:hover {
+  background-color: #010908;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 15px rgba(20, 184, 166, 0.3);
+}
+.btn-eliminar {
+  background-color: #dc2626;
+}
+
+.btn-eliminar:hover {
+  background-color: #b91c1c;
+  box-shadow: 0 8px 15px rgba(220, 38, 38, 0.3);
+}

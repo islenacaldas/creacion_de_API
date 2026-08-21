@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eliminar producto</title>
+
+    <!-- Carga los estilos de la página -->
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+    <main class="contenedor">
+        <h1>Eliminar producto</h1>
+
+        <p class="subtitulo">
+            El registro se borrará permanentemente y no se podrá recuperar.
+        </p>
+
+        <!-- Envía el id del producto a eliminarProducto.php mediante POST -->
+        <form action="eliminarProducto.php" method="post">
+
+            <div class="campo">
+                <label for="ide">Id del producto</label>
+
+                <!-- El name="ide" coincide con $_POST["ide"] en tu archivo PHP -->
+                <input
+                    type="number"
+                    id="ide"
+                    name="ide"
+                    min="1"
+                    required
+                    placeholder="Ej: 20">
+            </div>
+
+            <!-- Solicita confirmación antes de eliminar -->
+            <button
+                class="btn-eliminar"
+                type="submit"
+                onclick="return confirm('¿Estás completamente segura de eliminar este producto? Esta acción no se puede deshacer.');">
+                Eliminar producto
+            </button>
+        </form>
+    </main>
+</body>
+</html>
