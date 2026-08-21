@@ -21,17 +21,15 @@ $stocks=mysqli_real_escape_string($con,$stock);
 //$contras = mysqli_real_escape_string($con, $contra_encriptada)//esto evita que coloquen caracteres extraños
 
 
-
-$sql="SELECT * FROM Producto";
+//aqui se va a colocar la sentencia para el registro
+$sql="INSERT INTO producto (ideProducto, nomProducto, descrProducto, precioProducto, stockProducto) VALUES ('$ides','$noms','$descrs','$precios', '$stocks')";
 $respuesta= mysqli_query($con, $sql);
-$resulJson=array();
+
 if(!$respuesta){
     die("Error de consulta y/o conexion");
 }else{
-    while ($r=mysqli_fetch_assoc($respuesta)){
-    array_push($resulJson, $r);
-    }
+    echo "Producto registrado exitosamente"
 }
-echo json_encode($resulJson); 
+
 mysqli_close($con);
 ?>
