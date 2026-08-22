@@ -1,7 +1,11 @@
 <?php
 require "conexion.php";
 
-// Recibe el ID digitado en buscarActualizacionProducto.html
+if (!isset($_GET["ide"]) || empty($_GET["ide"])) {
+    die("<h2>Debes buscar un producto desde el formulario.</h2>
+         <br><a href='buscarActualizacionProducto.html'>Volver a buscar</a>");
+}
+
 $ide = $_GET["ide"];
 $ides = mysqli_real_escape_string($con, $ide);
 
@@ -37,31 +41,31 @@ if ($respuesta && mysqli_num_rows($respuesta) > 0) {
       <input type="hidden" name="id" value="<?php echo $producto['idProducto']; ?>">
 
       <div class="campo">
-        <label>Nombre del producto</label>
-        <input
-          type="text"
-          name="nombre"
-          value="<?php echo $producto['nombreProducto']; ?>"
-          required
-        >
-      </div>
+  <label>Nombre del producto</label>
+  <input
+    type="text"
+    name="nombre"
+    value="<?php echo $producto['nombre']; ?>"
+    required
+  >
+</div>
 
-      <div class="campo">
-        <label>Descripción</label>
-        <textarea name="descripcion" required><?php echo $producto['descripcionProducto']; ?></textarea>
-      </div>
+<div class="campo">
+  <label>Descripción</label>
+  <textarea name="descripcion" required><?php echo $producto['descripcion']; ?></textarea>
+</div>
 
-      <div class="campo">
-        <label>Precio</label>
-        <input
-          type="number"
-          name="precio"
-          step="0.01"
-          min="0"
-          value="<?php echo $producto['precioProducto']; ?>"
-          required
-        >
-      </div>
+<div class="campo">
+  <label>Precio</label>
+  <input
+    type="number"
+    name="precio"
+    step="0.01"
+    min="0"
+    value="<?php echo $producto['precio']; ?>"
+    required
+  >
+</div>
 
       <div class="campo">
         <label>Cantidad disponible</label>
@@ -69,8 +73,8 @@ if ($respuesta && mysqli_num_rows($respuesta) > 0) {
           type="number"
           name="stock"
           min="0"
-          value="<?php echo $producto['stockProducto']; ?>"
-          required
+          value="<?php echo $producto['stock']; ?>"
+          
         >
       </div>
 

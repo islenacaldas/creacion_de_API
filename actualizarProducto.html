@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Buscar producto para actualizar</title>
+  <title>Actualizar producto</title>
   <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
@@ -12,13 +12,13 @@
     <h2>Actualizar producto</h2>
     <p class="subtitulo">Busca el producto que deseas modificar</p>
 
-    <form action="formularioEdicion.php" method="GET">
+    <form action="formularioEdicionProducto.php" method="GET">
       <div class="campo">
-        <label for="ide">Ingrese el ID del producto:</label>
+        <label for="id">Ingrese el ID del producto:</label>
         <input
           type="number"
-          id="ide"
-          name="ide"
+          id="id"
+          name="id"
           required
           min="1"
           placeholder="Ej: 1"
